@@ -1,0 +1,16 @@
+{% block content %}
+{% for post in posts %}
+    <div class="post">
+           {{ post.user}}
+        <div class="date">
+            {{ post.datetime }}
+        </div>
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+        <p>Author: {{post.user}}</p>
+        <p>content: {{ post.content|linebreaksbr|truncatechars:120 }}</p>
+        <p>hash: {{ post.hash|linebreaksbr|truncatechars:120 }}</p>
+        <p>txId: {{ post.txId|linebreaksbr|truncatechars:120 }}</p>
+
+    </div>
+{% endfor %}
+{% endblock %}

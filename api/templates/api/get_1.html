@@ -1,0 +1,18 @@
+{% extends 'api/base_post.html' %}
+
+{% block content %}
+<form action="" method="get">
+ <p>inserisci una stringa, scopri quante volte appare nei posts</p>
+ <p>se non c'è allora non appare niente!</p>
+    <br>
+  <input type="text" name="q">
+  <input type="submit" value="search">
+</form>
+
+{% if search_results %}
+
+   the string appeared -->{{ search_results }}<-- times
+
+{% endif %}
+
+{% endblock %}
